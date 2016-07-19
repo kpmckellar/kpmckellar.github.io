@@ -1,0 +1,7 @@
+Whenever anyone says "Pokemon", Larry says "gotta catch 'em all"
+
+Whenever anyone says "just out for a stroll", Larry says a wild [random-pokemon] appears. 
+
+
+
+whenever someone says WILDCARD attack, Larry will check to see if it's a pokemon and if it is, he will say alright let's fight. If not he will say "[repeat WILDCARD]? You must not be a trainer"
