@@ -1,5 +1,5 @@
-var models = {};
-
-models.hello = function(word) {
-  console.log("Hello", word)
+function sortByDate(arr) {
+	arr.sort( function(a,b){
+	  return a.date - b.date
+	});
 }
