@@ -138,13 +138,13 @@ $(document).ready(function() {
 		// allows articles to be filtered by publication when nav items are clicked
 		$('body').on('click', '#sourceMenuMain li a', function(e) {
 		    e.preventDefault();
-		
+		$('#main').empty(); // clear current contents of article container 
 		    var sourceChoice = e.currentTarget.innerHTML; // The innerHTML will always be the value of name in the objects in the sources array
 
 		    // search the objects in the sources array for a 
 		    for (i = 0; i < sources.length; i++) {
 		    	if (sources[i].name === sourceChoice) {
-				    $('#main').empty(); // clear current contents of article container 
+				    
 				    var articlesTemplate = articlesCompiled(sources[i].articles);
 				    $('#main').append(articlesTemplate)
 		    	}
