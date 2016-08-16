@@ -188,6 +188,35 @@ $(document).ready(function() {
 			$('#popUp').empty();
 			$('body').css('overflow', 'auto')
 		})
+
+
+		// expand searchbar when magnifying glass is clicked
+		$('body').on('click', '#search a', function(e) {
+			e.preventDefault();
+			$('#search').toggleClass('active');
+		})
+
+		// automatically search articles on the page as the user types
+		window.addEventListener('input', function (e) {
+			var userInput = $('#search input').val().toLowerCase();
+
+			// search through the master array to find the articles that contain the string the user is typing
+			var matchesArticle = $.grep(articlesMaster, function(e) {
+				var fomatTitle = e.title.toLowerCase()
+				return fomatTitle.indexOf(userInput) > 0
+			})
+
+			console.log(matchesArticle)
+			console.log(articlesMaster)
+
+			// if the input is zero, this rerenders the original array, otherwise renders an array that contains the articles that match the user's search
+	    	if ( !userInput.length ) {
+				recontext($('#main'), articlesMaster);
+		    } else {
+				recontext($('#main'), matchesArticle);
+		    }
+	})
+
 	}).fail(function() {
 	    alert('error');
 	})

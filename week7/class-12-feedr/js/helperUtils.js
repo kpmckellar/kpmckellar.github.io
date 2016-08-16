@@ -4,17 +4,12 @@ function sortByDate(arr) {
 	});
 }
 
+// not sure if it's ok to declare this twice but this needs to be declared earlier in excution in order for the recontext helper to work
+var articlesSource = $('#articleTemplate').html();
+var articlesCompiled = Handlebars.compile(articlesSource);
 
-
-
-// search the objects in the sources array for a 
-
-function articleLoader() {
-    for (i = 0; i < sources.length; i++) {
-    	if (sources[i].name === sourceChoice) {
-		    
-		    var articlesTemplate = articlesCompiled(sources[i].articles);
-		    $('#main').append(articlesTemplate)
-    	}
-    }
+function recontext(container, context) {
+	container.empty();
+    var articlesTemplate = articlesCompiled(context);
+    container.append(articlesTemplate)
 }
