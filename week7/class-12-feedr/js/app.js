@@ -203,7 +203,7 @@ $(document).ready(function() {
 			// search through the master array to find the articles that contain the string the user is typing
 			var matchesArticle = $.grep(articlesMaster, function(e) {
 				var fomatTitle = e.title.toLowerCase()
-				return fomatTitle.indexOf(userInput) > 0
+				return fomatTitle.indexOf(userInput) > -1
 			})
 
 			console.log(matchesArticle)
