@@ -42,4 +42,37 @@ $(document).ready(function () {
 	// push all animal instances here
 	var farmAnimals = [];
 
+	// Create a top-level "FarmAnimal" object that all the other farm animals will inherit from
+	function FarmAnimal(name, image, sound) {
+		this.name = name;
+		this.image = image;
+		this.sound = sound;
+		this.talk = function() {
+			console.log(this.sound);
+		}
+	}
+
+	// Creating a goat animal which will inherit from FarmAnimal
+	function Goat(name, image, sound, trueOrFalse) {
+		FarmAnimal.call(this, name, image, sound);
+		this.hasPajamas = trueOrFalse;
+	}
+	Goat.prototype = new FarmAnimal();
+
+
+	// Creating a squid animal which will inherit from FarmAnimal
+	function Squid(name, image, sound, eats) {
+		FarmAnimal.call(this, name, image, sound, eats);
+		this.eats = ets
+	}
+	Goat.prototype = new FarmAnimal();
+
+
+	var bill = new Goat('Bill', 'http://i.imgur.com/T7EWj1b.jpg', 'Baaaaa', true);
+	var derek = new Squid('Derek', 'https://67.media.tumblr.com/edc7268671cce3704ca71cc2ff6ee491/tumblr_mqg2uroqcj1r3erevo1_400.jpg', 'Bloop Bloop Bloop', 'Barnacles')
+	console.log(bill)
+
+
+
+
 })

@@ -221,13 +221,6 @@ $(document).ready(function() {
 	    alert('error');
 	})
 
-	// Question for Chandler/Joe: could something like this work?
-	// $.get(for (i=0; i<sources.length, i++) {sources[i]}, function(result) {
-	// 	console.log(result)
-	// })
-
-	// Also, could all of the done functions be combined somehow?
-
 
 	// Navigation, creates a menu item for each source
 	var sourcesMenuSource = $('#sourceMenuTemplate').html();

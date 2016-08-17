@@ -226,6 +226,7 @@ nav ul ul li {
 .article .articleContent h6 {
   margin-top: 0;
   color: #666;
+  display: inline-block;
 }
 
 .article .impressions {
@@ -236,3 +237,15 @@ nav ul ul li {
   text-align: right;
   color: #097FB2;
 }
+
+#main.displayMashable .Reddit,
+#main.displayMashable .Digg {
+  display: none;
+}
+
+#main.displayReddit .Mashable,
+#main.displayReddit .Digg {
+  display: none;
+}
+
+
